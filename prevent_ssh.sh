@@ -52,7 +52,7 @@ do
 		x="$( echo $output | cut -d ' ' -f 1 )"
 		echo $x
 		kill -9 $x
-		kicked_users=`expr $count + 1`
+		kicked_users=`expr $kicked_users + 1`
 	fi
 	
 	sleep $delay;
