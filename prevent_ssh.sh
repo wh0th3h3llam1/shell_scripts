@@ -1,9 +1,15 @@
 #!/bin/bash
+# Bash Script to Prevent any user from ssh(ing) in your device.
+# This Code will work without superuser permissions.
+# Author : wh0am1
+# GitHub : https://github.com/wh0th3h3llam1
 
-# Author : Aarsh Sheth
 
 # No. of Counts 
 count=1
+
+# No. of Users Kicked from your device
+kicked_users=0
 
 # Get Username of the User
 printf 'Welcome '
@@ -25,6 +31,7 @@ while(true)
 do
 	echo ''
 	echo 'Count = #'$count
+	echo 'Kicked Users = #'$kicked_users
 	who
 	
 	# Fires the who command and awk command extracts the last line from it.
@@ -45,6 +52,7 @@ do
 		x="$( echo $output | cut -d ' ' -f 1 )"
 		echo $x
 		kill -9 $x
+		kicked_users=`expr $count + 1`
 	fi
 	
 	sleep $delay;
