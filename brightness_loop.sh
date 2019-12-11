@@ -8,8 +8,8 @@
 
 function brightness_loop()
 {
-	lowest_value=2
-	highest_value=100
+	lowest_value=5
+	highest_value=99
 	current_value=$highest_value
 	direction=-1
 	printf "Enter Delay in Seconds (Default Value is 0.01 Sec): "
